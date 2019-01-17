@@ -32,8 +32,8 @@ public class ClassesDetectionThreadImpl implements ClassesDetectionThread {
     @Value("${threads.waiting.time}")
     private Integer waitingTime;
 
-    @Value("${classes.detection.regex}")
-    private String classesRegex;
+//    @Value("${classes.detection.regex}")
+    private String classesRegex = ".*(class|interface|enum)\\s+(\\w+)(\\s+extends\\s+(\\w+))?(\\s+implements\\s+([\\w,\\s]+))?(<[\\w,\\s]+>)?\\s*\\{.*$";
 
     @Async
     @Override

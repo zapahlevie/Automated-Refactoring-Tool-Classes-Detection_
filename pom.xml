@@ -34,6 +34,11 @@
 
         <dependency>
             <groupId>com.final-project.automated-refactoring-tool</groupId>
+            <artifactId>methods-detection-java</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.final-project.automated-refactoring-tool</groupId>
             <artifactId>classes-detection-model</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -57,6 +62,14 @@
     </dependencies>
 
     <repositories>
+        <repository>
+            <id>Automated-Refactoring-Tool-Methods-Detection-Java</id>
+            <url>https://raw.github.com/zapahlevie/Automated-Refactoring-Tool-Methods-Detection-Java/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
         <repository>
             <id>Automated-Refactoring-Tool-Classes-Detection-Model</id>
             <url>https://raw.github.com/zapahlevie/Automated-Refactoring-Tool-Classes-Detection-Model/mvn-repo/</url>
