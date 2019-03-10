@@ -14,12 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Future;
 
-/**
- * @author fazazulfikapp
- * @version 1.0.0
- * @since 22 October 2018
- */
-
 @Service
 public class JavaClassesAnalysis implements ClassAnalysis {
 
@@ -32,18 +26,19 @@ public class JavaClassesAnalysis implements ClassAnalysis {
     @Autowired
     private ClassNameAnalysis classNameAnalysis;
 
-//    @Autowired
-//    private ClassPackageImportAnalysis classPackageImportAnalysis;
+    @Autowired
+    private ClassPackageImportAnalysis classPackageImportAnalysis;
 
     @Autowired
     private ClassAttributesAnalysis classAttributesAnalysis;
 
     @Async
     @Override
-    public Future analysis(FileModel fileModel, IndexModel indexModel, Map<String, List<ClassModel>> result) {
+    public Future analysis(FileModel fileModel, IndexModel indexModel,
+                           Map<String, List<ClassModel>> result) {
         ClassModel classModel = ClassModel.builder().build();
         try {
-//            classPackageImportAnalysis.analysis(fileModel, classModel);
+            classPackageImportAnalysis.analysis(fileModel, classModel);
             classNameAnalysis.analysis(fileModel, classModel, indexModel);
             classMethodAnalysis.analysis(fileModel, classModel);
             classAttributesAnalysis.analysis(fileModel, classModel, indexModel);
