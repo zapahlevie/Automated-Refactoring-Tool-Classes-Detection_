@@ -33,7 +33,8 @@ public class ClassesDetectionThreadImpl implements ClassesDetectionThread {
     private Integer waitingTime;
 
 //    @Value("${classes.detection.regex}")
-    private String classesRegex = ".*(class|interface|enum)\\s+(\\w+)(\\s+extends\\s+(\\w+))?(\\s+implements\\s+([\\w,\\s]+))?(<[\\w,\\s]+>)?\\s*\\{.*$";
+//    private String classesRegex = ".*(class|interface|enum)\\s+(\\w+)(\\s+extends\\s+(\\w+))?(\\s+implements\\s+([\\w,\\s]+))?(<[\\w,\\s]+>)?\\s*\\{.*$";
+    private String classesRegex = "\\s*(public|private)\\s+class\\s+(\\w+)\\s+((extends\\s+\\w+)|(implements\\s+\\w+( ,\\w+)*))?\\s*\\{";
 
     @Async
     @Override
