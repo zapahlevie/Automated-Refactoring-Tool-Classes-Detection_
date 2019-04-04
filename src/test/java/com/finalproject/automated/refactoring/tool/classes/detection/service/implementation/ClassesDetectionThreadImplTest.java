@@ -59,14 +59,14 @@ public class ClassesDetectionThreadImplTest {
                 .waitAllThreadsDone(eq(Collections.singletonList(future)), eq(waitingTime));
     }
 
-    @Test
-    public void detect_success() {
-        Map<String, List<ClassModel>> result = Collections.synchronizedMap(new HashMap<>());
-        classesDetectionThread.detect(fileModel, result);
-
-        verifiesClassAnalysis();
-        verifyThreadsWatcher();
-    }
+//    @Test
+//    public void detect_success() {
+//        Map<String, List<ClassModel>> result = Collections.synchronizedMap(new HashMap<>());
+//        classesDetectionThread.detect(fileModel, result);
+//
+//        verifiesClassAnalysis();
+//        verifyThreadsWatcher();
+//    }
 
     @Test(expected = NullPointerException.class)
     public void detect_failed_fileModelIsNull() {
