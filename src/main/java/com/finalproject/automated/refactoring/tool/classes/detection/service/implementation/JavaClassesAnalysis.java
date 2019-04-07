@@ -42,6 +42,7 @@ public class JavaClassesAnalysis implements ClassAnalysis {
             classNameAnalysis.analysis(fileModel, classModel, indexModel);
             classMethodAnalysis.analysis(fileModel, classModel);
             classAttributesAnalysis.analysis(fileModel, classModel, indexModel);
+            classModel.setFullContent(fileModel.getContent());
             saveResult(fileModel, classModel, result);
         } catch (Exception e) {
             // Do nothing
